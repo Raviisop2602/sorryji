@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I’m Sorry</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            width: 100%;
+            max-width: 450px;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+            text-align: center;
+        }
+
+        h1 {
+            color: #e63946;
+        }
+
+        .heart {
+            font-size: 48px;
+            margin: 15px 0;
+            animation: beat 1.5s infinite;
+        }
+
+        @keyframes beat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+
+        p {
+            color: #333;
+            line-height: 1.6;
+            font-size: 16px;
+        }
+
+        button {
+            margin-top: 15px;
+            padding: 14px 24px;
+            font-size: 16px;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .primary-btn {
+            background: #e63946;
+            color: white;
+        }
+
+        .yes-btn {
+            background: #2a9d8f;
+            color: white;
+        }
+
+        .no-btn {
+            background: #6c757d;
+            color: white;
+        }
+
+        .options {
+            display: none;
+            margin-top: 15px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .message {
+            display: none;
+            margin-top: 20px;
+            font-weight: 600;
+        }
+
+        footer {
+            margin-top: 25px;
+            font-size: 14px;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <h1>I’m Really Sorry BabyDon</h1>
+        <div class="heart">❤️</div>
+
+        <p>
+            I know I made a mistake, and I truly regret it.
+            You mean a lot to me, and I hope we can fix this.
+        <p>
+            I'm really really sorry 
+        </p>
+
+        <button class="primary-btn" onclick="showOptions()">
+            Forgive Me? 
+        </button>
+
+        <div class="options" id="options">
+            <button class="yes-btn" onclick="yesClicked()">Yes</button>
+            <button class="no-btn" onclick="noClicked()">No</button>
+        </div>
+
+        <div class="message" id="message"></div>
+
+        <footer>
+            — From my heart
+        </footer>
+    </div>
+
+    <script>
+        function showOptions() {
+            document.getElementById("options").style.display = "flex";
+        }
+
+        function yesClicked() {
+            const msg = document.getElementById("message");
+            msg.style.display = "block";
+            msg.style.color = "#2a9d8f";
+            msg.innerHTML = "Thank you for forgiving me 💖 I promise to do better.";
+        }
+
+        function noClicked() {
+            const msg = document.getElementById("message");
+            msg.style.display = "block";
+            msg.style.color = "#e63946";
+            msg.innerHTML = "I understand 😔 I’ll keep trying until you’re ready.";
+        }
+    </script>
+
+</body>
+</html>
